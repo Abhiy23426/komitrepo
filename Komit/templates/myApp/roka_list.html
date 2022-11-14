@@ -1,0 +1,31 @@
+{%extends 'myApp/parent2.html'%}
+{%block title%}
+	Roka
+{%endblock%}
+{%block style%}
+        body
+        {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(225,255,255,0.5),rgba(255,255,255,0.5)), url("/static/images/background_roka.jpg") no-repeat center 20% fixed;
+			background-size: cover;
+        }
+{%endblock%}
+{%block for_child%}
+	<div class="container">
+		<br>		
+		{%include 'myApp/pagination.html' with page=post_list%}
+		{%for post in post_list%}
+			<br>
+			<br>
+			<center>
+				<div class="im">
+					<img style="border: 1px solid black;" src="/{{post.photo}}" alt="N/A" id="list">
+				</div>
+			</center>
+			<br>
+			<br>
+			<hr>
+		{%endfor%}
+		{%include 'myApp/pagination.html' with page=post_list%}
+		<br>
+	</div>
+{%endblock%}
